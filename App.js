@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Toast from "react-native-toast-message";
+import "expo-dev-client";
 
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -9,6 +10,7 @@ import { useFonts } from "expo-font";
 
 import RegistrationScreen from "./src/pages/RegistrationScreen";
 import LoginScreen from "./src/pages/LoginScreen";
+import HomeScreen from "./src/pages/HomeScreen";
 
 export default function App() {
   useEffect(() => {
@@ -50,7 +52,11 @@ export default function App() {
           component={LoginScreen}
           options={{ headerShown: false }}
         />
-        {/* <MainStack.Screen name="Home" component={HomeScreen} /> */}
+        <MainStack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
       </MainStack.Navigator>
       <Toast />
     </NavigationContainer>
